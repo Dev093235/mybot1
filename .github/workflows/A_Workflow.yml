@@ -1,10 +1,3 @@
-
----
-
-**File: .github/workflows/A_Workflow.yml**  
-*(GitHub Actions workflow – for non-interactive login using cookies or email)*
-
-```yaml
 name: Run Mohit Bot
 
 on:
@@ -12,8 +5,8 @@ on:
     branches:
       - main
   schedule:
-    - cron: "*/30 * * * *"  # Runs every 30 minutes
-  workflow_dispatch:
+    - cron: '*/30 * * * *'  # Every 30 minutes
+  workflow_dispatch:        # Manual trigger option
 
 jobs:
   run-bot:
@@ -36,5 +29,5 @@ jobs:
           FB_EMAIL: ${{ secrets.FB_EMAIL }}
           FB_PASSWORD: ${{ secrets.FB_PASSWORD }}
           FB_COOKIES: ${{ secrets.FB_COOKIES }}
-          LOGIN_METHOD: cookies  # Use cookies or email for non-interactive login in Actions
+          LOGIN_METHOD: cookies  # Use 'cookies' or 'email' (manual login is not interactive in Actions)
         run: python G_Main.py
