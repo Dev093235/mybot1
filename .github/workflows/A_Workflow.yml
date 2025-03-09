@@ -31,3 +31,4 @@ jobs:
           FB_COOKIES: ${{ secrets.FB_COOKIES }}
           LOGIN_METHOD: cookies  # Use 'cookies' or 'email' (manual login is not interactive in Actions)
         run: python G_Main.py
+
